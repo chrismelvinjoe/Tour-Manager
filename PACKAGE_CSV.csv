@@ -1,0 +1,9 @@
+agent_name,package_name,tourist_place,contact,email,places,days_count,weather,budget,images
+thr,ooty package,ooty,9786445678,,Ooty Lake;; Pykara Falls; Hotel Lake View,2,Very Cold,5000,OIP_3.jpg;OIP_2.jpg;OIP_1.jpg
+thr,Munnar package,Munnar,,,Tea Gardens; Eravikulam Park; Hotel Misty,2,Normal,5000,OIP_1.jpg;OIP.jpg;OIP_4.jpg
+thr,Kodaikanal package,Kodaikanal,,,Bryant Park; Coaker's Walk; Hotel Sunrise,2,Very Cold,5000,OIP_5.jpg;OIP_3.jpg;OIP_2.jpg
+Vimal Tours,Kumbakonam,Sri Rangam,9786445678,malar@gmail.com,Shivan Temple;Devi Temple,2,Normal,4000,1.jpg;2.jpg;3.jpg
+Fast Trips,Entertainment,Goa,9843523455,fasttips@gmail.com,Dudhsagar Falls;Basilica Of Bom Jesus;Candolim Beach,3,Cool Climate,10000,g1.jpg;g2.jpg;g3.jpg
+A1 Tours,Munnar,Munnar,9786445678,aitours@gmail.com,Flower Park;Dam;Temple,2,Very Cold,5000,1.jpg;2.jpg;3.jpg
+Malar Tours,Traditional Temple,Kanyakumari,9786445678,malar@gmail.com,Mahalakshmi Temple;Beech;Dam,2,Cool Climate,5000,1.jpg;2.jpg;3.jpg
+Chris Melvin Joe,Pondy,Pondicherry,9361838143,chrismelvinjoe2004.007@gmail.com,Paradise Beach;Promenade / Rock Beach;Auroville;Le Club;French Quarter / White Town;Night Cycling Tours;Serenity Beach,4,Cool Climate,25000,Pondicherry_Shades_of_Pink.jpg;night_pondicherry.jpg;pondicherry.jpg;Fontinhas.jpg;Pondicherry_Paradise_beach.jpg;Auroville_Pondicherry.jpg;seadoo_jetski.jpg;Pondicherry.jpg;Rock_Beach.jpg

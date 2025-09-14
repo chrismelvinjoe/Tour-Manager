@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tour Packages</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f8f9fa;
+            margin: 20px;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .package-card {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-card h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .package-card p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .place-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .place-images img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">View Packages</a>
+        <a href="{{ url_for('payment') }}" class="btn btn-light">Back to Dashboard</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class="text-center">Available Tour Packages</h2>
+
+    {% if packages %}
+        <div class="row">
+            {% for package in packages %}
+                <div class="col-md-6">
+                    <div class="package-card">
+                        <h4><strong>{{ package['package_name'] }}</strong> - 📍 {{ package['tourist_place'] }}</h4>
+                        <p><b>Places Covered:</b> {{ ", ".join(package['places']) }}</p>
+                        <p><b>Weather:</b> {{ package['weather'] }}</p>
+                        <p><b>Total Days:</b> {{ package['days_count'] }}</p>
+                        <p><b>Budget:</b> ₹{{ package['budget'] }}</p>
+    
+                        {% if package['images'] %}
+                            <h5>Places Included:</h5>
+                            <div class="place-images">
+                                {% for image in package['images'] %}
+                                    <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Place Image">
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">No packages available.</p>
+    {% endif %}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-image: url("{{ url_for('static', filename='images/tt.jpg') }}");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container {
+        max-width: 700px;
+        margin-top: 30px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .agency-card {
+        background: #fff3cd;
+        padding: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .agency-card:hover {
+        background: #ffeb99;
+      }
+      .place-images {
+        display: none;
+        margin-top: 10px;
+      }
+      .place-images img {
+        width: 250px;
+        height: 150px;
+        border-radius: 5px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Agent Dashboard</a>
+        <a href="{{ url_for('agent_logout') }}" class="btn btn-danger"
+          >Logout</a
+        >
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 class="text-center">Welcome, {{ session['agent'] }}</h2>
+      <h4 class="text-center text-primary">Register Tour Package</h4>
+
+      <form method="POST" enctype="multipart/form-data" class="mt-3">
+        <div class="mb-3">
+          <input
+            type="text"
+            name="package_name"
+            class="form-control"
+            placeholder="Package Name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            name="tourist_place"
+            class="form-control"
+            placeholder="Tourist Place"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            name="contact"
+            class="form-control"
+            placeholder="Contact Number"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <textarea
+            name="places"
+            class="form-control"
+            rows="3"
+            placeholder="Enter places (comma separated)"
+            required
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Total No of Days:</label>
+          <input
+            type="number"
+            name="days_count"
+            class="form-control"
+            placeholder="Total Days"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Weather:</label>
+          <select name="weather" class="form-select" required>
+            <option value="Very Cold">Very Cold</option>
+            <option value="Cool Climate">Cool Climate</option>
+            <option value="Normal">Normal</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <input
+            type="number"
+            name="budget"
+            class="form-control"
+            placeholder="Budget (₹)"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Upload Place Images:</label>
+          <input
+            type="file"
+            name="place_images"
+            class="form-control"
+            multiple
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-success w-100">Add Package</button>
+      </form>
+
+      <h4 class="text-center mt-4 text-danger">Available Packages</h4>
+      <a href="{{ url_for('view_packages') }}" class="btn btn-danger w-100"
+        >View Packages</a
+      >
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

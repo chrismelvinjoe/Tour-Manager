@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 12px;
+        }
+
+        .btn-custom {
+            background: #ff6b81;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background: #ff4757;
+        }
+
+        .input-group-text {
+            background: #ff6b81;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <h2 class="text-center mb-4">Register</h2>
+                    <form method="POST">
+                        <!-- User ID -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+                            <input type="text" class="form-control" name="user_id" placeholder="User ID" required>
+                        </div>
+
+                        <!-- Name -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                            <input type="text" class="form-control" name="address" placeholder="Address" required>
+                        </div>
+
+                        <!-- Contact Number -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input type="tel" class="form-control" name="contact" placeholder="Contact Number" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <!-- Email ID -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" name="email" placeholder="Email ID" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        </div>
+
+                        <!-- Register Button -->
+                        <button type="submit" class="btn btn-custom w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Packages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Packages for {{ agent_name }}</h1>
+    
+    {% if packages %}
+        <ul>
+            {% for package in packages %}
+                <li>
+                    <h2>{{ package.place }}</h2>
+                    <p>Duration: {{ package.days }} days</p>
+                    <p>Cost: ₹{{ package.cost }}</p>
+                    <p>Places Covered: {{ package.places_covered }}</p>
+                    <img src="{{ package.image_url if package.image_url else url_for('static', filename='default.jpg') }}" alt="Package Image" width="200">
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No packages available for this agent.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
